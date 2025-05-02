@@ -11,6 +11,14 @@ function createHeart() {
 }
 
 setInterval(createHeart, 300);
+function playMusic() {
+  const music = document.getElementById("bgMusic");
+  if (music.paused) {
+    music.play().catch(err => {
+      console.log("Autoplay gagal: ", err);
+    });
+  }
+}
 
 function sendWA() {
   const phoneNumber = "6281230759880"; // Ganti dengan nomor tujuan

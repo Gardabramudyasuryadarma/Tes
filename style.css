@@ -2,8 +2,8 @@ body {
   margin: 0;
   padding: 0;
   overflow: hidden;
-  background: #ffeff5;
-  font-family: 'Arial', sans-serif;
+  background: linear-gradient(135deg, #ffe4ec, #ffd6e9);
+  font-family: 'Segoe UI', sans-serif;
   text-align: center;
 }
 
@@ -18,43 +18,48 @@ body {
   font-size: 4rem;
   color: #e60073;
   text-shadow: 2px 2px 5px rgba(0,0,0,0.2);
+  margin-bottom: 10px;
 }
 
 .sub-text {
-  font-size: 1.5rem;
-  color: #333;
-  margin-top: 50px;
+  font-size: 1.4rem;
+  color: #444;
+  margin-bottom: 150px;
 }
 
 .maaf-image {
   width: 200px;
-  margin-top: 20px;
+  margin-top: 10px;
+  border-radius: 20px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
 }
 
 .wa-button {
   margin-top: 20px;
-  padding: 12px 25px;
+  padding: 12px 30px;
   font-size: 1.2rem;
   color: white;
-  background-color: #25D366;
+  background: linear-gradient(45deg, #25D366, #128C7E);
   border: none;
   border-radius: 30px;
   cursor: pointer;
-  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
-  transition: transform 0.2s;
+  transition: transform 0.3s ease;
+  box-shadow: 0 6px 12px rgba(0,0,0,0.15);
 }
 
 .wa-button:hover {
   transform: scale(1.05);
 }
 
+/* Heart effect */
 .heart {
   position: absolute;
   width: 20px;
   height: 20px;
   background-color: #ff3366;
   transform: rotate(45deg);
-  animation: pulse 1s infinite;
+  animation: pulse 1.5s infinite;
+  opacity: 0.8;
 }
 
 .heart::before,
@@ -78,16 +83,56 @@ body {
 }
 
 @keyframes pulse {
-  0% {
+  0%, 100% {
     transform: scale(1) rotate(45deg);
-    opacity: 1;
+    opacity: 0.7;
   }
   50% {
-    transform: scale(1.5) rotate(45deg);
-    opacity: 0.8;
+    transform: scale(1.4) rotate(45deg);
+    opacity: 1;
   }
-  100% {
-    transform: scale(1) rotate(45deg);
+}
+
+/* Animations */
+.fade-in {
+  animation: fadeIn 1.5s ease forwards;
+}
+
+.fade-in-delay {
+  opacity: 0;
+  animation: fadeIn 2s ease forwards;
+  animation-delay: 1.5s;
+}
+
+.slide-down {
+  transform: translateY(-30px);
+  opacity: 0;
+  animation: slideDown 1.2s ease forwards;
+}
+
+.slide-up {
+  transform: translateY(30px);
+  opacity: 0;
+  animation: slideUp 1.2s ease forwards;
+  animation-delay: 0.8s;
+}
+
+@keyframes fadeIn {
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slideDown {
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes slideUp {
+  to {
+    transform: translateY(0);
     opacity: 1;
   }
 }

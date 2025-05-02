@@ -1,63 +1,93 @@
 body {
-    margin: 0;
-    padding: 0;
-    overflow: hidden;
-    background: #ffeff5;
-    font-family: 'Arial', sans-serif;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background: #ffeff5;
+  font-family: 'Arial', sans-serif;
+  text-align: center;
+}
+
+.center-container {
+  position: relative;
+  top: 30%;
+  transform: translateY(-30%);
+  z-index: 2;
+}
+
+.center-text {
+  font-size: 4rem;
+  color: #e60073;
+  text-shadow: 2px 2px 5px rgba(0,0,0,0.2);
+}
+
+.sub-text {
+  font-size: 1.5rem;
+  color: #333;
+  margin-top: 10px;
+}
+
+.maaf-image {
+  width: 200px;
+  margin-top: 20px;
+}
+
+.wa-button {
+  margin-top: 20px;
+  padding: 12px 25px;
+  font-size: 1.2rem;
+  color: white;
+  background-color: #25D366;
+  border: none;
+  border-radius: 30px;
+  cursor: pointer;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+  transition: transform 0.2s;
+}
+
+.wa-button:hover {
+  transform: scale(1.05);
+}
+
+.heart {
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  background-color: #ff3366;
+  transform: rotate(45deg);
+  animation: pulse 1s infinite;
+}
+
+.heart::before,
+.heart::after {
+  content: "";
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  background-color: #ff3366;
+  border-radius: 50%;
+}
+
+.heart::before {
+  top: -10px;
+  left: 0;
+}
+
+.heart::after {
+  left: -10px;
+  top: 0;
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(1) rotate(45deg);
+    opacity: 1;
   }
-  
-  .center-text {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    font-size: 4rem;
-    color: #e60073;
-    text-shadow: 2px 2px 5px rgba(0,0,0,0.2);
-    z-index: 2;
+  50% {
+    transform: scale(1.5) rotate(45deg);
+    opacity: 0.8;
   }
-  
-  .heart {
-    position: absolute;
-    width: 20px;
-    height: 20px;
-    background-color: #ff3366;
-    transform: rotate(45deg);
-    animation: pulse 1s infinite;
+  100% {
+    transform: scale(1) rotate(45deg);
+    opacity: 1;
   }
-  
-  .heart::before,
-  .heart::after {
-    content: "";
-    position: absolute;
-    width: 20px;
-    height: 20px;
-    background-color: #ff3366;
-    border-radius: 50%;
-  }
-  
-  .heart::before {
-    top: -10px;
-    left: 0;
-  }
-  
-  .heart::after {
-    left: -10px;
-    top: 0;
-  }
-  
-  @keyframes pulse {
-    0% {
-      transform: scale(1) rotate(45deg);
-      opacity: 1;
-    }
-    50% {
-      transform: scale(1.5) rotate(45deg);
-      opacity: 0.8;
-    }
-    100% {
-      transform: scale(1) rotate(45deg);
-      opacity: 1;
-    }
-  }
-  
+}

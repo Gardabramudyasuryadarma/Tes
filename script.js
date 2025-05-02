@@ -13,11 +13,10 @@ function createHeart() {
 setInterval(createHeart, 300);
 function playMusic() {
   const music = document.getElementById("bgMusic");
-  if (music.paused) {
-    music.play().catch(err => {
-      console.log("Autoplay gagal: ", err);
-    });
-  }
+  music.volume = 0.7;
+  music.play()
+    .then(() => console.log("Musik dimulai"))
+    .catch(err => console.warn("Autoplay dicegah:", err));
 }
 
 function sendWA() {

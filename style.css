@@ -30,7 +30,7 @@ body {
 }
 
 .maaf-image {
-  width: 200px;
+  width: 400px;
   margin-bottom: 20px;
   animation: pulse 2s infinite alternate;
 }

@@ -20,7 +20,6 @@ body {
 .center-text {
   font-size: 3rem;
   margin-bottom: 10px;
-  animation: floatText 3s ease-in-out infinite;
 }
 
 .sub-text {
@@ -79,38 +78,31 @@ body {
     0 0 5px #ff3399,
     0 0 15px #ff3399,
     0 0 25px #ff66cc;
-  animation: floatText 3s ease-in-out infinite, pulseGlow 2s ease-in-out infinite alternate;
+  animation: glowPulse 1.5s infinite alternate;
 }
 
-/* Animasi floating teks */
-@keyframes floatText {
-  0% { transform: translateY(0); }
-  50% { transform: translateY(-10px); }
-  100% { transform: translateY(0); }
-}
-
-/* Glow denyut teks */
-@keyframes pulseGlow {
-  0% {
-    text-shadow:
-      0 0 5px #ff3399,
-      0 0 10px #ff66cc,
-      0 0 15px #ff99cc;
-  }
-  100% {
-    text-shadow:
-      0 0 15px #ff3399,
-      0 0 25px #ff66cc,
-      0 0 35px #ff99cc;
-  }
-}
-
+/* Animations */
 @keyframes flicker {
   0%, 19%, 21%, 23%, 25%, 54%, 56%, 100% {
     opacity: 1;
   }
   20%, 24%, 55% {
     opacity: 0.4;
+  }
+}
+
+@keyframes glowPulse {
+  from {
+    text-shadow:
+      0 0 5px #ff3399,
+      0 0 10px #ff66cc,
+      0 0 15px #ff99cc;
+  }
+  to {
+    text-shadow:
+      0 0 20px #ff3399,
+      0 0 30px #ff66cc,
+      0 0 40px #ff99cc;
   }
 }
 
@@ -153,7 +145,7 @@ body {
   to { transform: translateY(0); opacity: 1; }
 }
 
-/* Partikel LOVE */
+/* LOVE PARTICLE EFFECT */
 #love-container {
   position: fixed;
   top: 0;
@@ -174,3 +166,12 @@ body {
 }
 
 @keyframes floatLove {
+  0% {
+    transform: translateY(0) scale(1);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(-100vh) scale(0.5);
+    opacity: 0;
+  }
+}

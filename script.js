@@ -13,26 +13,8 @@ function sendWA() {
   const url = `https://wa.me/${phoneNumber}?text=${message}`;
   window.open(url, "_blank");
 }
-function spawnFlower() {
-  const container = document.getElementById("flower-container");
-  const flower = document.createElement("div");
 
-  flower.classList.add("flower");
-  flower.style.left = Math.random() * 100 + "vw";
-  flower.style.top = "100vh";
-  flower.style.animationDuration = Math.random() * 3 + 4 + "s"; // durasi acak antara 4 dan 7 detik
-
-  container.appendChild(flower);
-
-  setTimeout(() => {
-    flower.remove();
-  }, 7000); // Menghapus bunga setelah 7 detik
-}
-
-// Menjalankan efek bunga setiap 500ms
-setInterval(spawnFlower, 500);
-
-
+// LOVE PARTICLE EFFECT
 function spawnLove() {
   const colors = ['#ff3399', '#ff66cc', '#ff1aff', '#ffccff', '#ff99cc', '#ff33aa'];
   const container = document.getElementById("love-container");
@@ -60,4 +42,23 @@ function spawnLove() {
   }, 4000);
 }
 
+// FLOWER PARTICLE EFFECT
+function spawnFlower() {
+  const container = document.getElementById("flower-container");
+  const flower = document.createElement("div");
+
+  flower.classList.add("flower");
+  flower.style.left = Math.random() * 100 + "vw";
+  flower.style.top = "100vh";
+  flower.style.animationDuration = Math.random() * 3 + 4 + "s"; // durasi acak antara 4 dan 7 detik
+
+  container.appendChild(flower);
+
+  setTimeout(() => {
+    flower.remove();
+  }, 7000); // Menghapus bunga setelah 7 detik
+}
+
+// Menjalankan efek love dan flower setiap interval
 setInterval(spawnLove, 300);
+setInterval(spawnFlower, 500);

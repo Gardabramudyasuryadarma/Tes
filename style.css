@@ -1,17 +1,20 @@
 body {
   margin: 0;
   font-family: 'Segoe UI', sans-serif;
-  background-color: #0b0b0b;
+  background-color: #000;
   color: white;
   height: 100vh;
   display: flex;
   align-items: center;
   justify-content: center;
+  overflow: hidden;
 }
 
 .center-container {
   text-align: center;
   padding: 20px;
+  z-index: 2;
+  position: relative;
 }
 
 .center-text {
@@ -48,7 +51,6 @@ body {
   transform: scale(1.05);
 }
 
-/* Neon effect */
 .neon-text {
   color: #ff1aff;
   text-shadow:
@@ -109,7 +111,6 @@ body {
   to { transform: scale(1.05); }
 }
 
-/* Fade-in effects */
 .fade-in {
   animation: fadeIn 2s ease forwards;
 }
@@ -142,4 +143,35 @@ body {
 @keyframes slideUp {
   from { transform: translateY(30px); opacity: 0; }
   to { transform: translateY(0); opacity: 1; }
+}
+
+/* LOVE PARTICLE EFFECT */
+#love-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  pointer-events: none;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  z-index: 1;
+}
+
+.love {
+  position: absolute;
+  font-size: 1.2rem;
+  animation: floatLove 4s linear forwards;
+  opacity: 0.9;
+  user-select: none;
+}
+
+@keyframes floatLove {
+  0% {
+    transform: translateY(0) scale(1);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(-100vh) scale(0.5);
+    opacity: 0;
+  }
 }

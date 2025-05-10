@@ -1,3 +1,4 @@
+/* === Reset dasar === */
 body {
   margin: 0;
   font-family: 'Segoe UI', sans-serif;
@@ -10,6 +11,7 @@ body {
   overflow: hidden;
 }
 
+/* === Kontainer Tengah === */
 .center-container {
   text-align: center;
   padding: 20px;
@@ -17,9 +19,11 @@ body {
   position: relative;
 }
 
+/* === Teks Utama & Sub === */
 .center-text {
   font-size: 3rem;
   margin-bottom: 10px;
+  animation: waveMotion 4s ease-in-out infinite, pulseGlow 2s ease-in-out infinite alternate;
 }
 
 .sub-text {
@@ -28,12 +32,14 @@ body {
   color: #ccc;
 }
 
+/* === Gambar Permintaan Maaf === */
 .maaf-image {
-  width: 400px;
+  width: 200px;
   margin-bottom: 20px;
   animation: pulse 2s infinite alternate;
 }
 
+/* === Tombol WhatsApp & Musik === */
 .wa-button {
   background-color: #ff66cc;
   color: white;
@@ -51,6 +57,7 @@ body {
   transform: scale(1.05);
 }
 
+/* === Teks Neon === */
 .neon-text {
   color: #ff1aff;
   text-shadow:
@@ -62,6 +69,7 @@ body {
   animation: flicker 2s infinite;
 }
 
+/* === Tombol Glow Neon === */
 .neon-button {
   box-shadow:
     0 0 5px #ff1aff,
@@ -69,6 +77,7 @@ body {
     0 0 20px #ff66cc;
 }
 
+/* === Teks LOVE Neon === */
 .neon-love {
   font-size: 3rem;
   margin-top: 10px;
@@ -78,10 +87,37 @@ body {
     0 0 5px #ff3399,
     0 0 15px #ff3399,
     0 0 25px #ff66cc;
-  animation: glowPulse 1.5s infinite alternate;
+  animation: waveMotion 4s ease-in-out infinite, pulseGlow 2s ease-in-out infinite alternate;
 }
 
-/* Animations */
+/* === Animasinya === */
+
+/* Bergerak gelombang */
+@keyframes waveMotion {
+  0% { transform: translate(0, 0); }
+  25% { transform: translate(5px, -5px); }
+  50% { transform: translate(0, -10px); }
+  75% { transform: translate(-5px, -5px); }
+  100% { transform: translate(0, 0); }
+}
+
+/* Glow denyut teks */
+@keyframes pulseGlow {
+  0% {
+    text-shadow:
+      0 0 5px #ff3399,
+      0 0 10px #ff66cc,
+      0 0 15px #ff99cc;
+  }
+  100% {
+    text-shadow:
+      0 0 15px #ff3399,
+      0 0 25px #ff66cc,
+      0 0 35px #ff99cc;
+  }
+}
+
+/* Efek flicker */
 @keyframes flicker {
   0%, 19%, 21%, 23%, 25%, 54%, 56%, 100% {
     opacity: 1;
@@ -91,26 +127,13 @@ body {
   }
 }
 
-@keyframes glowPulse {
-  from {
-    text-shadow:
-      0 0 5px #ff3399,
-      0 0 10px #ff66cc,
-      0 0 15px #ff99cc;
-  }
-  to {
-    text-shadow:
-      0 0 20px #ff3399,
-      0 0 30px #ff66cc,
-      0 0 40px #ff99cc;
-  }
-}
-
+/* Denyut gambar */
 @keyframes pulse {
   from { transform: scale(1); }
   to { transform: scale(1.05); }
 }
 
+/* Fade in */
 .fade-in {
   animation: fadeIn 2s ease forwards;
 }
@@ -127,6 +150,7 @@ body {
   }
 }
 
+/* Slide bawah dan atas */
 .slide-down {
   animation: slideDown 1s ease-out;
 }
@@ -145,7 +169,7 @@ body {
   to { transform: translateY(0); opacity: 1; }
 }
 
-/* LOVE PARTICLE EFFECT */
+/* === Efek Partikel LOVE === */
 #love-container {
   position: fixed;
   top: 0;
